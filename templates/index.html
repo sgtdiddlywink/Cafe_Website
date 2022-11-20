@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafe&Wifi API</title>
+</head>
+<body>
+    <h1>Welcome to the Cafe & Wifi API</h1>
+    <div class="container">
+      <div class="row">
+        <div class="post_preview">
+          {% for cafe in all_cafes  %}
+            <h2>{{cafe.name}}</h2>
+            <a href={{cafe.map_url}}>Map Location</a>
+            <img src={{cafe.img_url}} alt="">
+            <h3>{{cafe.location}}</h3>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <a href="{{ url_for('all_cafes')}}">JSON of all cafe database entries</a>
+</body>
+</html>
